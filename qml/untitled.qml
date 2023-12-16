@@ -39,8 +39,23 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 ApplicationWindow {
+    id: windowApp
     objectName: "applicationWindow"
     initialPage: Qt.resolvedUrl("pages/MainPage.qml")
     cover: Qt.resolvedUrl("cover/DefaultCoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
+
+    function openHomePage(){
+        pageStack.clear()
+        pageStack.push("pages/MainPage.qml")
+    }
+
+    function openPage(pageName){
+        pageStack.push("pages/"+pageName)
+    }
+
+    function navigateBack(){
+        pageStack.pop()
+    }
+
 }

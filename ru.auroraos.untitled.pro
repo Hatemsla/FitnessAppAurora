@@ -51,6 +51,8 @@ DISTFILES += \
     qml/pages/AddDevicePage.qml \
     qml/pages/Device.qml \
     qml/pages/MainPage.qml \
+    qml/pages/NewDevice.qml \
+    qml/pages/NewDeviceCreationPage.qml \
     rpm/ru.auroraos.untitled.spec \
     AUTHORS.md \
     CODE_OF_CONDUCT.md \

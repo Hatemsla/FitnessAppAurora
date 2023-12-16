@@ -1,50 +1,26 @@
 import QtQuick 2.0
 
+Item {
+    property string deviceName
+    // Для разных устройств разные комментарии
+    property string shortComment
 
-Item{
-    property string name
-    property string imageSource
+    height: 80
     width: parent.width
-    height: 180
 
     Rectangle{
-        color: "transparent"
-        width: parent.width
         height: parent.height
+        width: parent.width
+        color: "transparent"
 
-        Rectangle {
-            height: parent.height
-            width: parent.width
-            anchors.fill: parent
-            anchors.topMargin: 8
-            anchors.bottomMargin: 8
-            anchors.leftMargin: 16
-            anchors.rightMargin: 16
-            color: "#10FFFFFF"
-            radius: 24
-
-
-
-            Image{
-                id: image
-                height: parent.height-60
-                width: height
-                source: imageSource
-                anchors.margins: 24
-                anchors.verticalCenter: parent.verticalCenter
-            }
-
-            Text {
-                id: deviceName
-                text: name
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: image.right
-                anchors.leftMargin: 20
-
-                color: "white"
-            }
+        Text {
+            id: itemName
+            text: deviceName
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
         }
+
+
+
     }
 }
-
-

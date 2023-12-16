@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>watch-svgrepo-com.svg</file>
+        <file>next-svgrepo-com.svg</file>
+        <file>plus-svgrepo-com.svg</file>
     </qresource>
 </RCC>
