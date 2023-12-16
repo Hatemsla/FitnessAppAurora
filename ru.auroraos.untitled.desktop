@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.auroraos.untitled
+Exec=/usr/bin/ru.auroraos.untitled
+Name=Template
+Name[ru]=Шаблон
+
+[X-Application]
+Permissions=WebView
+OrganizationName=ru.auroraos
+ApplicationName=untitled
+ExecDBus=/usr/bin/ru.auroraos.untitled

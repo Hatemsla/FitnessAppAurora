@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>watch-svgrepo-com.svg</file>
+    </qresource>
+</RCC>
