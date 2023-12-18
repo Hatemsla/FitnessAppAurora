@@ -58,6 +58,7 @@ Page {
         text: "Добавить"
         highlightColor: "white"
         onClicked: {
+            windowApp.addDeviceToHome(etxtNewDeviceName.text)
             windowApp.openHomePage()
         }
         anchors.top: etxtNewDeviceName.bottom

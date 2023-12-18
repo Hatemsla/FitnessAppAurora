@@ -1,7 +1,7 @@
 import QtQuick 2.0
 
 Item {
-    property string deviceName
+    property string activityName
 
 
     height: 80
@@ -14,7 +14,7 @@ Item {
 
         Text {
             id: itemName
-            text: deviceName
+            text: activityName
             color: "white"
             anchors.left: parent.left
             anchors.leftMargin: 24

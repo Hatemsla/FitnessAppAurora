@@ -45,9 +45,16 @@ ApplicationWindow {
     cover: Qt.resolvedUrl("cover/DefaultCoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
 
+    property var allUserDevices: []
+
+    function addDeviceToHome(name){
+        allUserDevices.push(name)
+    }
+
     function openHomePage(){
         pageStack.clear()
         pageStack.push("pages/MainPage.qml")
+        pageStack.currentPage.initDevices(allUserDevices)
     }
 
     function openPage(pageName){
@@ -57,5 +64,4 @@ ApplicationWindow {
     function navigateBack(){
         pageStack.pop()
     }
-
 }

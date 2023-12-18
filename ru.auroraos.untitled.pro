@@ -44,11 +44,15 @@ PKGCONFIG += \
 
 SOURCES += \
     src/main.cpp \
+    src/randomnumbergenerator.cpp
 
 HEADERS += \
+    src/randomnumbergenerator.h
 
 DISTFILES += \
+    qml/pages/Activity.qml \
     qml/pages/AddDevicePage.qml \
+    qml/pages/CircularProgressBar.qml \
     qml/pages/Device.qml \
     qml/pages/MainPage.qml \
     qml/pages/NewDevice.qml \

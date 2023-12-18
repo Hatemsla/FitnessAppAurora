@@ -35,8 +35,15 @@
 **
 *******************************************************************************/
 
+#include "randomnumbergenerator.cpp"
+
 #include <auroraapp.h>
 #include <QtQuick>
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
 
 int main(int argc, char *argv[])
 {
@@ -49,4 +56,33 @@ int main(int argc, char *argv[])
     view->show();
 
     return application->exec();
+
+    RandomNumberGenerator rng;
+
+        // Вектор для хранения данных за всю неделю
+        std::vector<DayData> weekData;
+
+        // Запись данных для каждого дня недели
+        for (int day = 0; day < 7; ++day) {
+            std::string dayName;
+            switch (day) {
+                case 0: dayName = "Monday"; break;
+                case 1: dayName = "Tuesday"; break;
+                case 2: dayName = "Wednesday"; break;
+                case 3: dayName = "Thursday"; break;
+                case 4: dayName = "Friday"; break;
+                case 5: dayName = "Saturday"; break;
+                case 6: dayName = "Sunday"; break;
+                default: dayName = "Unknown Day"; break;
+            }
+
+            // Генерация данных для текущего дня
+            int sleepHours = rng.sleep();
+            int stepCount = rng.step();
+            int hardPoint = rng.pulse();
+
+            // Добавлеание днных в вектор
+            weekData.push_back(DayData(dayName, sleepHours, stepCount, hardPoint));
+        }
+
 }
