@@ -40,233 +40,229 @@ Page {
         }
     }
 
-    Item {
-        anchors.fill: parent
+    Column {
+        anchors.top: parent.top
+        anchors.topMargin: appbar.height * 3
+        width: parent.width
+        spacing: 16
 
-        Column {
-            anchors.centerIn: parent
-            width: parent.width
-            height: parent.height - appbar.height * 6
-            spacing: 16
+        TextField {
+            id: loginField
+            placeholderText: "Логин"
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: "white"
+            cursorColor: "white"
 
-            TextField {
-                id: loginField
-                placeholderText: "Логин"
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: "white"
-                cursorColor: "white"
-
-                onTextChanged: {
-                    validateLogin()
-                }
-
-                Rectangle{
-                    color: defaultColor
-                    anchors.top: parent.bottom
-                    anchors.topMargin: 18
-                    width: parent.width
-                    height: 20
-
-                    Text {
-                        anchors.left: parent.left
-                        anchors.verticalCenter: parent.verticalCenter
-                        color: (isValidLogin) ? "red" : "transparent"
-
-                        text: errorLoginMessage
-                        font.pixelSize: 28
-                    }
-                }
-
-                function validateLogin() {
-                    if (loginField.text.trim() === "") {
-                        isValidLogin = true
-                        errorLoginMessage = "Почта не может быть пустой"
-                    } else {
-                        isValidLogin = false
-                    }
-                }
+            onTextChanged: {
+                validateLogin()
             }
 
-            TextField {
-                id: emailField
-                placeholderText: "Почта"
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: "white"
-                cursorColor: "white"
-
-                onTextChanged: {
-                    validateEmail()
-                }
-
-                Rectangle{
-                    color: defaultColor
-                    anchors.top: parent.bottom
-                    anchors.topMargin: 18
-                    width: parent.width
-                    height: 20
-
-                    Text {
-                        anchors.left: parent.left
-                        anchors.verticalCenter: parent.verticalCenter
-                        color: (isValidEmail) ? "red" : "transparent"
-
-                        text: errorEmailMessage
-                        font.pixelSize: 28
-                    }
-                }
-
-                function validateEmail() {
-                    if (emailField.text.trim() === "") {
-                        isValidEmail = true
-                        errorEmailMessage = "Почта не может быть пустой"
-                    } else {
-                        isValidEmail = false
-                    }
-                }
-            }
-
-            TextField {
-                id: passwordField
-                placeholderText: "Пароль"
-                echoMode: TextInput.Password
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: "white"
-                cursorColor: "white"
-
-                onTextChanged: {
-                    validatePassword()
-                }
-
-                Rectangle{
-                    color: defaultColor
-                    anchors.top: parent.bottom
-                    anchors.topMargin: 18
-                    width: parent.width
-                    height: 20
-
-                    Text {
-                        anchors.left: parent.left
-                        anchors.verticalCenter: parent.verticalCenter
-                        color: (isValidPassword) ? "red" : "transparent"
-
-                        text: errorPasswordMessage
-                        font.pixelSize: 28
-                    }
-                }
-
-                function validatePassword() {
-                    if (passwordField.text.trim() === "") {
-                        isValidPassword = true
-                        errorPasswordMessage = "Пароль не может быть пустой"
-                    } else {
-                        isValidPassword = false
-                    }
-                }
-            }
-
-            TextField {
-                id: confirmPasswordField
-                placeholderText: "Повторите пароль"
-                echoMode: TextInput.Password
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: "white"
-                cursorColor: "white"
-
-                onTextChanged: {
-                    validateConfirmPassword()
-                }
-
-                Rectangle{
-                    color: defaultColor
-                    anchors.top: parent.bottom
-                    anchors.topMargin: 18
-                    width: parent.width
-                    height: 20
-
-                    Text {
-                        anchors.left: parent.left
-                        anchors.verticalCenter: parent.verticalCenter
-                        color: (isValidConfirmPassword) ? "red" : "transparent"
-
-                        text: errorConfirmPasswordMessage
-                        font.pixelSize: 28
-                    }
-                }
-
-                function validateConfirmPassword() {
-                    if (confirmPasswordField.text.trim() === "") {
-                        isValidConfirmPassword = true
-                        errorConfirmPasswordMessage = "Пароль не может быть пустой"
-                    } else if(confirmPasswordField.text != passwordField.text) {
-                        isValidConfirmPassword = true
-                        errorConfirmPasswordMessage = "Пароли не совпдают"
-                    } else {
-                        isValidConfirmPassword = false
-                    }
-                }
-            }
-
-            Button {
-                id: auth
-                text: "Зарегистрироваться"
-                anchors.horizontalCenter: parent.horizontalCenter
+            Rectangle{
+                color: defaultColor
+                anchors.top: parent.bottom
+                anchors.topMargin: 18
                 width: parent.width
-                anchors.left: parent.left
-                anchors.leftMargin: 32
-                color: "white"
-                highlightColor: "white"
-                highlightBackgroundColor: "white"
-                onClicked: {
-                    valid = true
-                    if (loginField.text != existLogin) {
-                        errorLoginMessage = "Неверная почта"
-                        isValidLogin = true
-                        valid = false
-                    }
+                height: 20
 
-                    if (emailField.text != existEmail) {
-                        errorEmailMessage = "Неверная почта"
-                        isValidEmail = true
-                        valid = false
-                    }
+                Text {
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
+                    color: (isValidLogin) ? "red" : "transparent"
 
-                    if (passwordField.text != existPassword) {
-                        errorPasswordMessage = "Неверный пароль"
-                        isValidPassword = true
-                        valid = false
-                    }
-
-                    if (confirmPasswordField.text != passwordField.text || confirmPasswordField.text.trim() === "") {
-                        errorConfirmPasswordMessage = "Неверный пароль"
-                        isValidConfirmPassword = true
-                        valid = false
-                    }
-
-                    if(!valid)
-                        return
-
-                    windowApp.openPageWithPop("MainPage.qml")
+                    text: errorLoginMessage
+                    font.pixelSize: 28
                 }
             }
 
-            Button {
-                id: goToAuth
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: "white"
-                backgroundColor: defaultColor
-                highlightColor: "white"
-                highlightBackgroundColor: defaultColor
-                onClicked: {
-                    pageStack.pop();
+            function validateLogin() {
+                if (loginField.text.trim() === "") {
+                    isValidLogin = true
+                    errorLoginMessage = "Почта не может быть пустой"
+                } else {
+                    isValidLogin = false
+                }
+            }
+        }
+
+        TextField {
+            id: emailField
+            placeholderText: "Почта"
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: "white"
+            cursorColor: "white"
+
+            onTextChanged: {
+                validateEmail()
+            }
+
+            Rectangle{
+                color: defaultColor
+                anchors.top: parent.bottom
+                anchors.topMargin: 18
+                width: parent.width
+                height: 20
+
+                Text {
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
+                    color: (isValidEmail) ? "red" : "transparent"
+
+                    text: errorEmailMessage
+                    font.pixelSize: 28
+                }
+            }
+
+            function validateEmail() {
+                if (emailField.text.trim() === "") {
+                    isValidEmail = true
+                    errorEmailMessage = "Почта не может быть пустой"
+                } else {
+                    isValidEmail = false
+                }
+            }
+        }
+
+        TextField {
+            id: passwordField
+            placeholderText: "Пароль"
+            echoMode: TextInput.Password
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: "white"
+            cursorColor: "white"
+
+            onTextChanged: {
+                validatePassword()
+            }
+
+            Rectangle{
+                color: defaultColor
+                anchors.top: parent.bottom
+                anchors.topMargin: 18
+                width: parent.width
+                height: 20
+
+                Text {
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
+                    color: (isValidPassword) ? "red" : "transparent"
+
+                    text: errorPasswordMessage
+                    font.pixelSize: 28
+                }
+            }
+
+            function validatePassword() {
+                if (passwordField.text.trim() === "") {
+                    isValidPassword = true
+                    errorPasswordMessage = "Пароль не может быть пустой"
+                } else {
+                    isValidPassword = false
+                }
+            }
+        }
+
+        TextField {
+            id: confirmPasswordField
+            placeholderText: "Повторите пароль"
+            echoMode: TextInput.Password
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: "white"
+            cursorColor: "white"
+
+            onTextChanged: {
+                validateConfirmPassword()
+            }
+
+            Rectangle{
+                color: defaultColor
+                anchors.top: parent.bottom
+                anchors.topMargin: 18
+                width: parent.width
+                height: 20
+
+                Text {
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
+                    color: (isValidConfirmPassword) ? "red" : "transparent"
+
+                    text: errorConfirmPasswordMessage
+                    font.pixelSize: 28
+                }
+            }
+
+            function validateConfirmPassword() {
+                if (confirmPasswordField.text.trim() === "") {
+                    isValidConfirmPassword = true
+                    errorConfirmPasswordMessage = "Пароль не может быть пустой"
+                } else if(confirmPasswordField.text != passwordField.text) {
+                    isValidConfirmPassword = true
+                    errorConfirmPasswordMessage = "Пароли не совпдают"
+                } else {
+                    isValidConfirmPassword = false
+                }
+            }
+        }
+
+        Button {
+            id: auth
+            text: "Зарегистрироваться"
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
+            anchors.left: parent.left
+            anchors.leftMargin: 32
+            color: "white"
+            highlightColor: "white"
+            highlightBackgroundColor: "white"
+            onClicked: {
+                valid = true
+                if (loginField.text != existLogin) {
+                    errorLoginMessage = "Неверная почта"
+                    isValidLogin = true
+                    valid = false
                 }
 
-                Label {
-                    text: "У вас уже есть аккаунт? Авторизируйтесь!"
-                    font.pixelSize: 26
-                    topPadding: 18
-                    anchors.horizontalCenter: goToAuth.horizontalCenter
-                    color: "white"
+                if (emailField.text != existEmail) {
+                    errorEmailMessage = "Неверная почта"
+                    isValidEmail = true
+                    valid = false
                 }
+
+                if (passwordField.text != existPassword) {
+                    errorPasswordMessage = "Неверный пароль"
+                    isValidPassword = true
+                    valid = false
+                }
+
+                if (confirmPasswordField.text != passwordField.text || confirmPasswordField.text.trim() === "") {
+                    errorConfirmPasswordMessage = "Неверный пароль"
+                    isValidConfirmPassword = true
+                    valid = false
+                }
+
+                if(!valid)
+                    return
+
+                windowApp.openPageWithPop("MainPage.qml")
+            }
+        }
+
+        Button {
+            id: goToAuth
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: "white"
+            backgroundColor: defaultColor
+            highlightColor: "white"
+            highlightBackgroundColor: defaultColor
+            onClicked: {
+                pageStack.pop();
+            }
+
+            Label {
+                text: "У вас уже есть аккаунт? Авторизируйтесь!"
+                font.pixelSize: 26
+                topPadding: 18
+                anchors.horizontalCenter: goToAuth.horizontalCenter
+                color: "white"
             }
         }
     }
