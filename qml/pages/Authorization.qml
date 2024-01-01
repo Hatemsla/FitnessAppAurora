@@ -39,6 +39,7 @@ Page {
     Column {
         anchors.centerIn: parent
         width: parent.width
+        height: parent.height - appbar.height * 7
         spacing: 16
 
 

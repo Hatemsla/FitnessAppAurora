@@ -35,7 +35,7 @@
 ##
 ################################################################################
 
-TARGET = ru.auroraos.Test
+TARGET = ru.auroraos.FitnessApp
 
 CONFIG += \
     auroraapp
@@ -45,6 +45,8 @@ PKGCONFIG += \
 SOURCES += \
     src/main.cpp \
     src/randomnumbergenerator.cpp
+
+QT += sql
 
 HEADERS += \
     src/randomnumbergenerator.h
@@ -58,12 +60,13 @@ DISTFILES += \
     qml/pages/NewDevice.qml \
     qml/pages/NewDeviceCreationPage.qml \
     qml/pages/Registration.qml \
-    rpm/ru.auroraos.Test.spec \
     AUTHORS.md \
     CODE_OF_CONDUCT.md \
     CONTRIBUTING.md \
     LICENSE.BSD-3-CLAUSE.md \
     README.md \
+    rpm/ru.auroraos.FitnessApp.spec \
+    translations/ru_копия.auroraos.FitnessApp.ts
 
 
 AURORAAPP_ICONS = 86x86 108x108 128x128 172x172
@@ -71,8 +74,8 @@ AURORAAPP_ICONS = 86x86 108x108 128x128 172x172
 CONFIG += auroraapp_i18n
 
 TRANSLATIONS += \
-    translations/ru.auroraos.Test.ts \
-    translations/ru.auroraos.Test-ru.ts \
+    translations/ru.auroraos.FitnessApp.ts \
+    translations/ru.auroraos.FitnessApp-ru.ts \
 
 RESOURCES += \
     qml/icons/res.qrc

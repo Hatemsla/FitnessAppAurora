@@ -1,4 +1,4 @@
-Name:       ru.auroraos.Test
+Name:       ru.auroraos.FitnessApp
 
 Summary:    Моё приложение для ОС Аврора
 Version:    0.1

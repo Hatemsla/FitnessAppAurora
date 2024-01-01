@@ -46,6 +46,7 @@ Page {
         Column {
             anchors.centerIn: parent
             width: parent.width
+            height: parent.height - appbar.height * 6
             spacing: 16
 
             TextField {
