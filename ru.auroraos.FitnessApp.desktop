@@ -3,8 +3,8 @@ Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=ru.auroraos.FitnessApp
 Exec=/usr/bin/ru.auroraos.FitnessApp
-Name=Template
-Name[ru]=Шаблон
+Name=Fitness
+Name[ru]=Фитнес
 
 [X-Application]
 Permissions=Sensors;Internet;RemovableMedia;UserDirs

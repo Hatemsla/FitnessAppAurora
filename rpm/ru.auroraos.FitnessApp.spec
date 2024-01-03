@@ -1,8 +1,8 @@
 Name:       ru.auroraos.FitnessApp
 
 Summary:    Моё приложение для ОС Аврора
-Version:    0.1
-Release:    1
+Version:    0.2.0
+Release:    1%{?dist}
 Group:      Qt/Qt
 License:    BSD-3-Clause
 URL:        https://auroraos.ru
