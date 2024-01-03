@@ -7,7 +7,7 @@ Name=Template
 Name[ru]=Шаблон
 
 [X-Application]
-Permissions=AccessSecurityLog;Sensors;SecureStorage;Internet;RemovableMedia;UserDirs
+Permissions=Sensors;Internet;RemovableMedia;UserDirs
 OrganizationName=ru.auroraos
 ApplicationName=FitnessApp
 ExecDBus=/usr/bin/ru.auroraos.FitnessApp
