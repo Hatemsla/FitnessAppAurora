@@ -1,13 +1,13 @@
 [Desktop Entry]
 Type=Application
 X-Nemo-Application-Type=silica-qt5
-Icon=ru.auroraos.FitnessApp
-Exec=/usr/bin/ru.auroraos.FitnessApp
+Icon=host.kaleidoscope.FitnessApp
+Exec=/usr/bin/host.kaleidoscope.FitnessApp
 Name=Fitness
 Name[ru]=Фитнес
 
 [X-Application]
 Permissions=Sensors;Internet;RemovableMedia;UserDirs
-OrganizationName=ru.auroraos
+OrganizationName=host.kaleidoscope
 ApplicationName=FitnessApp
-ExecDBus=/usr/bin/ru.auroraos.FitnessApp
+ExecDBus=/usr/bin/host.kaleidoscope.FitnessApp
