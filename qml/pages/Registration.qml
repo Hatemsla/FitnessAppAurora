@@ -215,25 +215,25 @@ Page {
             highlightBackgroundColor: "white"
             onClicked: {
                 valid = true
-                if (loginField.text != existLogin) {
-                    errorLoginMessage = "Неверная почта"
+                if (loginField.text === existLogin) {
+                    errorLoginMessage = "Такой логин уже существует"
                     isValidLogin = true
                     valid = false
                 }
 
-                if (emailField.text != existEmail) {
-                    errorEmailMessage = "Неверная почта"
+                if (emailField.text === existEmail) {
+                    errorEmailMessage = "Почта уже используется"
                     isValidEmail = true
                     valid = false
                 }
 
-                if (passwordField.text != existPassword) {
-                    errorPasswordMessage = "Неверный пароль"
+                if (passwordField.text.length < 6) {
+                    errorPasswordMessage = "Слишком короткий пароль"
                     isValidPassword = true
                     valid = false
                 }
 
-                if (confirmPasswordField.text != passwordField.text || confirmPasswordField.text.trim() === "") {
+                if (confirmPasswordField.text !== passwordField.text || confirmPasswordField.text.trim() === "") {
                     errorConfirmPasswordMessage = "Неверный пароль"
                     isValidConfirmPassword = true
                     valid = false

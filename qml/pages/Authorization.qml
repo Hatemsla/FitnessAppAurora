@@ -152,6 +152,21 @@ Page {
         }
 
         Button {
+            id: guestAuth
+            text: "Зайти гостем"
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
+            anchors.left: parent.left
+            anchors.leftMargin: 32
+            color: "white"
+            highlightColor: "white"
+            highlightBackgroundColor: "white"
+            onClicked: {
+                windowApp.openPageWithPop("MainPage.qml")
+            }
+        }
+
+        Button {
             id: goToReg
             anchors.horizontalCenter: parent.horizontalCenter
             color: "white"
