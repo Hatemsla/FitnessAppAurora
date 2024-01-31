@@ -41,7 +41,7 @@ import Sailfish.Silica 1.0
 ApplicationWindow {
     id: windowApp
     objectName: "applicationWindow"
-    initialPage: Qt.resolvedUrl("pages/Authorization.qml")
+    initialPage: Qt.resolvedUrl("pages/Splash.qml")
     cover: Qt.resolvedUrl("cover/DefaultCoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
 
@@ -62,7 +62,7 @@ ApplicationWindow {
     }
 
     function openPageWithPop(pageName){
-        pageStack.push("pages/"+pageName)
+        pageStack.replace("pages/"+pageName)
         //pageStack.replace("pages/"+pageName)
     }
 

@@ -1,8 +1,8 @@
 Name:       host.kaleidoscope.FitnessApp
 
 Summary:    Fitness - ваш персональный тренер и гид в мире здоровья.
-Version:    0.2.3
-Release:    5
+Version:    0.2.4
+Release:    8
 Group:      Qt/Qt
 License:    BSD-3-Clause
 URL:        https://git.failover.bar/hackathon/aurora-15-12-2023/im
@@ -16,9 +16,10 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %changelog
-2024-01-11 Разработчик kalashnikovjan@yandex.ru - 0.2.3-5
+* 2024-01-31 Разработчик kalashnikovjan@yandex.ru - 0.2.4-8
 Изменения и исправления:
-- Исправлен баг с возомжностью создать устройство без указания названия
+- Добавлен Splash экран приложения
+- Обновлена иконка приложения
 
 
 %description

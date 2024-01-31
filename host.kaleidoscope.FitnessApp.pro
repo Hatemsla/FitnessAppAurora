@@ -65,6 +65,7 @@ DISTFILES += \
     CONTRIBUTING.md \
     LICENSE.BSD-3-CLAUSE.md \
     README.md \
+    qml/pages/Splash.qml \
     rpm/host.kaleidoscope.FitnessApp.spec \
     translations/ru_копия.auroraos.FitnessApp.ts
 

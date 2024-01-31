@@ -45,7 +45,7 @@ CoverBackground {
         objectName: "placeholder"
         text: qsTr("FitnessApp")
         icon {
-            source: Qt.resolvedUrl("../icons/FitnessApp.svg")
+            source: Qt.resolvedUrl("../icons/FitnessApp.png")
             sourceSize { width: icon.width; height: icon.height }
         }
         forceFit: true
