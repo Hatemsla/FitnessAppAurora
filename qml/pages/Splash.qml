@@ -44,7 +44,7 @@ Page {
         interval: 3000
         repeat: false
         onTriggered: {
-            pageStack.replace("MainPage.qml")
+            pageStack.replace("Onboarding1.qml")
         }
     }
 

@@ -59,6 +59,9 @@ DISTFILES += \
     qml/pages/Device.qml \
     qml/pages/NewDevice.qml \
     qml/pages/NewDeviceCreationPage.qml \
+    qml/pages/Onboarding2.qml \
+    qml/pages/Onboarding1.qml \
+    qml/pages/Onboarding3.qml \
     qml/pages/Registration.qml \
     AUTHORS.md \
     CODE_OF_CONDUCT.md \
