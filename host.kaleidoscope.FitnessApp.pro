@@ -43,13 +43,11 @@ CONFIG += \
 PKGCONFIG += \
 
 SOURCES += \
-    src/main.cpp \
-    src/randomnumbergenerator.cpp
+    src/main.cpp
 
 QT += sql
 
-HEADERS += \
-    src/randomnumbergenerator.h
+HEADERS +=
 
 DISTFILES += \
     qml/pages/Activity.qml \
@@ -57,18 +55,20 @@ DISTFILES += \
     qml/pages/Authorization.qml \
     qml/pages/CircularProgressBar.qml \
     qml/pages/Device.qml \
+    qml/pages/GenderPage.qml \
+    qml/pages/MyButton.qml \
     qml/pages/NewDevice.qml \
     qml/pages/NewDeviceCreationPage.qml \
-    qml/pages/Onboarding2.qml \
-    qml/pages/Onboarding1.qml \
-    qml/pages/Onboarding3.qml \
-    qml/pages/Registration.qml \
+    qml/pages/Onboarding1Page.qml \
+    qml/pages/Onboarding2Page.qml \
     AUTHORS.md \
     CODE_OF_CONDUCT.md \
     CONTRIBUTING.md \
     LICENSE.BSD-3-CLAUSE.md \
     README.md \
-    qml/pages/Splash.qml \
+    qml/pages/Onboarding3Page.qml \
+    qml/pages/RegistrationPage.qml \
+    qml/pages/SplashPage.qml \
     rpm/host.kaleidoscope.FitnessApp.spec \
     translations/ru_копия.auroraos.FitnessApp.ts
 

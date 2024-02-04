@@ -8,5 +8,9 @@
         <file>Onboarding2Background.png</file>
         <file>Onboarding3Background.png</file>
         <file>chevron-right.png</file>
+        <file>black-female-icon.png</file>
+        <file>black-male-icon.png</file>
+        <file>white-female-icon.png</file>
+        <file>white-male-icon.png</file>
     </qresource>
 </RCC>

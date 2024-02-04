@@ -83,7 +83,7 @@ Page {
         interval: 3000
         repeat: false
         onTriggered: {
-            pageStack.replace("Onboarding3.qml")
+            pageStack.replace("Onboarding3Page.qml")
         }
     }
 

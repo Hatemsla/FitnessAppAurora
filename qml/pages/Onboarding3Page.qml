@@ -17,7 +17,7 @@ Page {
 
     Image {
         id: splashImage
-        source: "qrc:/Onboarding1Background.png"
+        source: "qrc:/Onboarding3Background.png"
 
         anchors.top: parent.top
         anchors.left: parent.left
@@ -29,7 +29,7 @@ Page {
 
     Text {
         id: devText
-        text: "MEET YOUR COACH,"
+        text: "ACTIONS IS THE"
         color: _whiteColor
         font.pixelSize: Theme.dp(48)
         anchors.horizontalCenter: parent.horizontalCenter
@@ -39,7 +39,7 @@ Page {
 
     Text {
         id: startJourneyText
-        text: "START YOUR JOURNEY"
+        text: "KEY TO ALL SUCCESS"
         color: _whiteColor
         font.pixelSize: Theme.dp(48)
         font.bold: true
@@ -47,11 +47,80 @@ Page {
         anchors.top: devText.bottom
     }
 
+//    MouseArea {
+//        anchors.top: startJourneyText.bottom
+//        anchors.topMargin: Theme.dp(96)
+//        anchors.horizontalCenter: parent.horizontalCenter
+//        height: 80
+//        width: 300
+
+//        onClicked: {
+//            pageStack.replace("MainPage.qml")
+//        }
+
+//        Rectangle {
+//            anchors.fill: parent
+//            color: _greenColor
+//            radius: 48
+
+//            Row {
+//                anchors.centerIn: parent
+//                spacing: 8
+
+//                Text {
+//                    id: startText
+//                    text: "Start Now"
+//                    anchors.verticalCenter: parent.verticalCenter
+//                    font.bold: true
+//                }
+
+//                Image {
+//                    source: "qrc:/chevron-right.png"
+//                    height: 36
+//                    width: 36
+//                    anchors.verticalCenter: parent.verticalCenter
+//                }
+//            }
+//        }
+//    }
+
+    MyButton{
+        anchors.top: startJourneyText.bottom
+        anchors.topMargin: Theme.dp(96)
+        anchors.horizontalCenter: parent.horizontalCenter
+        buttonHeight: 80
+        buttonWidth: 300
+        buttonRadius: 48
+        buttonColor: _greenColor
+        iconSource: "qrc:/chevron-right.png"
+        buttonText: "Start Now"
+
+
+        onCustomClicked: pageStack.replace("GenderPage.qml")
+    }
+
     RowLayout {
+        id: bottomContainers
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: Theme.dp(96)
         spacing: 24
+
+        Rectangle {
+            width: 40
+            height: 10
+            color: _grayColor
+            Layout.alignment: Qt.AlignBottom
+            Layout.fillWidth: true
+        }
+
+        Rectangle {
+            width: 40
+            height: 10
+            color: _grayColor
+            Layout.alignment: Qt.AlignBottom
+            Layout.fillWidth: true
+        }
 
         Rectangle {
             width: 80
@@ -60,35 +129,5 @@ Page {
             Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
         }
-
-        Rectangle {
-            width: 40
-            height: 10
-            color: _grayColor
-            Layout.alignment: Qt.AlignBottom
-            Layout.fillWidth: true
-        }
-
-        Rectangle {
-            width: 40
-            height: 10
-            color: _grayColor
-            Layout.alignment: Qt.AlignBottom
-            Layout.fillWidth: true
-        }
-    }
-
-    Timer{
-        id: splashTimer
-        interval: 3000
-        repeat: false
-        onTriggered: {
-            pageStack.replace("Onboarding2.qml")
-        }
-    }
-
-    Component.onCompleted: {
-        // Запустить таймер после завершения инициализации страницы
-        splashTimer.start();
     }
 }
