@@ -6,10 +6,7 @@ Page {
 
     width: parent.width
     height: parent.height
-    backgroundColor: _backgroundColor
-
-    property string _backgroundColor: "#1c1c1e"
-    property string _textColor: "#d0fd3e"
+    backgroundColor: customBackgroundColor
 
     Image {
         id: splashImage
@@ -22,7 +19,7 @@ Page {
     Text {
         id: devText
         text: "DEV"
-        color: _textColor
+        color: greenColor
         font.pixelSize: Theme.dp(96)
         font.bold: true
         anchors.horizontalCenter: parent.horizontalCenter
@@ -32,7 +29,7 @@ Page {
 
     Text {
         text: "MUSCLES"
-        color: _textColor
+        color: greenColor
         font.pixelSize: Theme.dp(72)
         font.bold: true
         anchors.horizontalCenter: parent.horizontalCenter

@@ -12,5 +12,6 @@
         <file>black-male-icon.png</file>
         <file>white-female-icon.png</file>
         <file>white-male-icon.png</file>
+        <file>arrow-left.png</file>
     </qresource>
 </RCC>

@@ -7,12 +7,7 @@ Page {
 
     width: parent.width
     height: parent.height
-    backgroundColor: _backgroundColor
-
-    property string _backgroundColor: "#1c1c1e"
-    property string _greenColor: "#d0fd3e"
-    property string _whiteColor: "#ffffff"
-    property string _grayColor: "#3a3a3c"
+    backgroundColor: customBackgroundColor
 
 
     Image {
@@ -30,7 +25,7 @@ Page {
     Text {
         id: devText
         text: "ACTIONS IS THE"
-        color: _whiteColor
+        color: whiteColor
         font.pixelSize: Theme.dp(48)
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: splashImage.bottom
@@ -40,49 +35,12 @@ Page {
     Text {
         id: startJourneyText
         text: "KEY TO ALL SUCCESS"
-        color: _whiteColor
+        color: whiteColor
         font.pixelSize: Theme.dp(48)
         font.bold: true
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: devText.bottom
     }
-
-//    MouseArea {
-//        anchors.top: startJourneyText.bottom
-//        anchors.topMargin: Theme.dp(96)
-//        anchors.horizontalCenter: parent.horizontalCenter
-//        height: 80
-//        width: 300
-
-//        onClicked: {
-//            pageStack.replace("MainPage.qml")
-//        }
-
-//        Rectangle {
-//            anchors.fill: parent
-//            color: _greenColor
-//            radius: 48
-
-//            Row {
-//                anchors.centerIn: parent
-//                spacing: 8
-
-//                Text {
-//                    id: startText
-//                    text: "Start Now"
-//                    anchors.verticalCenter: parent.verticalCenter
-//                    font.bold: true
-//                }
-
-//                Image {
-//                    source: "qrc:/chevron-right.png"
-//                    height: 36
-//                    width: 36
-//                    anchors.verticalCenter: parent.verticalCenter
-//                }
-//            }
-//        }
-//    }
 
     MyButton{
         anchors.top: startJourneyText.bottom
@@ -91,7 +49,7 @@ Page {
         buttonHeight: 80
         buttonWidth: 300
         buttonRadius: 48
-        buttonColor: _greenColor
+        buttonColor: greenColor
         iconSource: "qrc:/chevron-right.png"
         buttonText: "Start Now"
 
@@ -109,7 +67,7 @@ Page {
         Rectangle {
             width: 40
             height: 10
-            color: _grayColor
+            color: grayColor
             Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
         }
@@ -117,7 +75,7 @@ Page {
         Rectangle {
             width: 40
             height: 10
-            color: _grayColor
+            color: grayColor
             Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
         }
@@ -125,7 +83,7 @@ Page {
         Rectangle {
             width: 80
             height: 10
-            color: _greenColor
+            color: greenColor
             Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
         }

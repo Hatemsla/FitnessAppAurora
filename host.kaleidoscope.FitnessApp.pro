@@ -52,6 +52,7 @@ HEADERS +=
 DISTFILES += \
     qml/pages/Activity.qml \
     qml/pages/AddDevicePage.qml \
+    qml/pages/AgePage.qml \
     qml/pages/Authorization.qml \
     qml/pages/CircularProgressBar.qml \
     qml/pages/Device.qml \

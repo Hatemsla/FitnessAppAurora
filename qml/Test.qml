@@ -41,9 +41,16 @@ import Sailfish.Silica 1.0
 ApplicationWindow {
     id: windowApp
     objectName: "applicationWindow"
-    initialPage: Qt.resolvedUrl("pages/GenderPage.qml")
+    initialPage: Qt.resolvedUrl("pages/AgePage.qml")
     cover: Qt.resolvedUrl("cover/DefaultCoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
+
+    property string customBackgroundColor: "#1c1c1e"
+    property string greenColor: "#d0fd3e"
+    property string whiteColor: "#ffffff"
+    property string grayColor: "#3a3a3c"
+    property string disableGenderColor: "#2c2c2e"
+    property string blackColor: "#000000"
 
     property var allUserDevices: []
 

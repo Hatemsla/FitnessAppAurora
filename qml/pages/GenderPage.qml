@@ -6,19 +6,12 @@ Page {
     allowedOrientations: Orientation.All
     id: genderPage
 
-    backgroundColor: _backgroundColor
-
-    property string _backgroundColor: "#1c1c1e"
-    property string _greenColor: "#d0fd3e"
-    property string _whiteColor: "#ffffff"
-    property string _grayColor: "#3a3a3c"
-    property string _disableGenderColor: "#2c2c2e"
-    property string _blackColor: "#000000"
+    backgroundColor: customBackgroundColor
 
     Text {
         id: tellText
         text: "TELL US ABOUTN YOURSELF!"
-        color: _whiteColor
+        color: whiteColor
         font.pixelSize: Theme.dp(36)
         font.bold: true
         anchors.horizontalCenter: parent.horizontalCenter
@@ -29,7 +22,7 @@ Page {
     Text {
         id: toGiveText
         text: "TO GIVE YOU A BETTER EXPERIENCE WE NEED TO KNOW YOUR GENDER"
-        color: _whiteColor
+        color: whiteColor
         font.pixelSize: Theme.dp(24)
         wrapMode: Text.Wrap
         horizontalAlignment: Text.AlignHCenter
@@ -50,18 +43,18 @@ Page {
         height: 280
 
         onClicked: {
-            maleCircle.color = _greenColor
-            femaleCircle.color = _disableGenderColor
+            maleCircle.color = greenColor
+            femaleCircle.color = disableGenderColor
             maleImage.source = "qrc:/black-male-icon.png"
-            maleText.color = _blackColor
+            maleText.color = blackColor
             femaleImage.source = "qrc:/white-female-icon.png"
-            femaleText.color = _whiteColor
+            femaleText.color = whiteColor
         }
 
         Rectangle {
             id: maleCircle
             radius: 280
-            color: _greenColor
+            color: greenColor
             anchors.fill: maleMouseArea
 
             Image {
@@ -75,7 +68,7 @@ Page {
             Text {
                 id: maleText
                 text: "Male"
-                color: _blackColor
+                color: blackColor
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: Theme.dp(28)
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -93,18 +86,18 @@ Page {
         height: 280
 
         onClicked: {
-            maleCircle.color = _disableGenderColor
-            femaleCircle.color = _greenColor
+            maleCircle.color = disableGenderColor
+            femaleCircle.color = greenColor
             maleImage.source = "qrc:/white-male-icon.png"
-            maleText.color = _whiteColor
+            maleText.color = whiteColor
             femaleImage.source = "qrc:/black-female-icon.png"
-            femaleText.color = _blackColor
+            femaleText.color = blackColor
         }
 
         Rectangle {
             id: femaleCircle
             radius: 280
-            color: _disableGenderColor
+            color: disableGenderColor
             anchors.fill: femaleMouseArea
 
             Image {
@@ -118,7 +111,7 @@ Page {
             Text {
                 id: femaleText
                 text: "Male"
-                color: _whiteColor
+                color: whiteColor
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: Theme.dp(28)
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -134,11 +127,11 @@ Page {
         buttonHeight: 80
         buttonWidth: 220
         buttonRadius: 48
-        buttonColor: _greenColor
+        buttonColor: greenColor
         iconSource: "qrc:/chevron-right.png"
         buttonText: "Next"
 
 
-        onCustomClicked: pageStack.replace("MainPage.qml")
+        onCustomClicked: pageStack.replace("AgePage.qml")
     }
 }

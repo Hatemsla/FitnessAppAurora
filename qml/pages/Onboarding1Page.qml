@@ -7,12 +7,7 @@ Page {
 
     width: parent.width
     height: parent.height
-    backgroundColor: _backgroundColor
-
-    property string _backgroundColor: "#1c1c1e"
-    property string _greenColor: "#d0fd3e"
-    property string _whiteColor: "#ffffff"
-    property string _grayColor: "#3a3a3c"
+    backgroundColor: customBackgroundColor
 
 
     Image {
@@ -30,7 +25,7 @@ Page {
     Text {
         id: devText
         text: "MEET YOUR COACH,"
-        color: _whiteColor
+        color: whiteColor
         font.pixelSize: Theme.dp(48)
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: splashImage.bottom
@@ -40,7 +35,7 @@ Page {
     Text {
         id: startJourneyText
         text: "START YOUR JOURNEY"
-        color: _whiteColor
+        color: whiteColor
         font.pixelSize: Theme.dp(48)
         font.bold: true
         anchors.horizontalCenter: parent.horizontalCenter
@@ -56,7 +51,7 @@ Page {
         Rectangle {
             width: 80
             height: 10
-            color: _greenColor
+            color: greenColor
             Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
         }
@@ -64,7 +59,7 @@ Page {
         Rectangle {
             width: 40
             height: 10
-            color: _grayColor
+            color: grayColor
             Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
         }
@@ -72,7 +67,7 @@ Page {
         Rectangle {
             width: 40
             height: 10
-            color: _grayColor
+            color: grayColor
             Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
         }
