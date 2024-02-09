@@ -2,8 +2,8 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    objectName: "agePage"
-    id: agePage
+    objectName: "heightPage"
+    id: heightPage
     allowedOrientations: Orientation.Portrait
 
     backgroundColor: customBackgroundColor
@@ -12,7 +12,7 @@ Page {
 
     Text {
         id: tellText
-        text: "HOW OLD ARE YOU ?"
+        text: "WHAT’S YOUR HEIGHT?"
         color: whiteColor
         font.pixelSize: Theme.fontSizeLarge + Theme.dp(4)
         font.bold: true
@@ -48,7 +48,7 @@ Page {
                 append({ "number": -1 })
                 append({ "number": -1 })
                 append({ "number": -1 })
-                for (var i = 6; i <= 100; ++i) {
+                for (var i = 120; i <= 220; ++i) {
                     append({ "number": i });
                 }
                 append({ "number": -1 })
@@ -113,6 +113,7 @@ Page {
         spacing: 0
     }
 
+
     Column{
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
@@ -132,18 +133,30 @@ Page {
         }
     }
 
+    Text{
+        id: cmText
+        anchors.right: parent.right
+        anchors.rightMargin: Theme.paddingLarge + Theme.dp(198)
+        anchors.bottom: parent.bottom
+        anchors.top: parent.top
+        anchors.topMargin: Theme.paddingLarge + Theme.dp(630)
+        text: "cm"
+        font.pixelSize: Theme.fontSizeSmall
+        color: whiteColor
+    }
+
     MyButton{
         anchors.bottom: parent.bottom
         anchors.bottomMargin: Theme.paddingLarge + Theme.dp(50)
         anchors.left: parent.left
         anchors.leftMargin: Theme.paddingLarge + Theme.dp(26)
-        buttonHeight: Theme.itemSizeExtraSmall
-        buttonWidth: Theme.itemSizeExtraSmall
+        buttonHeight: 80
+        buttonWidth: 80
         buttonRadius: 48
         buttonColor: grayColor
         iconSource: "qrc:/arrow-left.png"
 
-        onCustomClicked: pageStack.replace("GenderPage.qml")
+        onCustomClicked: pageStack.replace("WeightPage.qml")
     }
 
     MyButton{
@@ -152,14 +165,15 @@ Page {
         anchors.bottomMargin: Theme.paddingLarge + Theme.dp(50)
         anchors.right: parent.right
         anchors.rightMargin: Theme.paddingLarge + Theme.dp(26)
-        buttonHeight: Theme.itemSizeExtraSmall
-        buttonWidth: Theme.itemSizeMedium * 2
+        buttonHeight: 80
+        buttonWidth: 220
         buttonRadius: 48
         buttonColor: greenColor
         iconSource: "qrc:/chevron-right.png"
         buttonText: "Next"
 
 
-        onCustomClicked: pageStack.replace("WeightPage.qml")
+        onCustomClicked: pageStack.replace("MainPage.qml")
     }
 }
+

@@ -57,6 +57,7 @@ DISTFILES += \
     qml/pages/CircularProgressBar.qml \
     qml/pages/Device.qml \
     qml/pages/GenderPage.qml \
+    qml/pages/HeightPage.qml \
     qml/pages/MyButton.qml \
     qml/pages/NewDevice.qml \
     qml/pages/NewDeviceCreationPage.qml \
@@ -70,6 +71,7 @@ DISTFILES += \
     qml/pages/Onboarding3Page.qml \
     qml/pages/RegistrationPage.qml \
     qml/pages/SplashPage.qml \
+    qml/pages/WeightPage.qml \
     rpm/host.kaleidoscope.FitnessApp.spec \
     translations/ru_копия.auroraos.FitnessApp.ts
 

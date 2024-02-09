@@ -6,6 +6,7 @@ Page {
 
     width: parent.width
     height: parent.height
+    allowedOrientations: Orientation.Portrait
     backgroundColor: customBackgroundColor
 
     Image {
@@ -13,14 +14,14 @@ Page {
         source: "qrc:/splash-icon.png"
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        anchors.verticalCenterOffset: -Theme.dp(64)
+        anchors.verticalCenterOffset: - Theme.paddingLarge - Theme.dp(42)
     }
 
     Text {
         id: devText
         text: "DEV"
         color: greenColor
-        font.pixelSize: Theme.dp(96)
+        font.pixelSize: Theme.fontSizeExtraLarge + Theme.dp(64)
         font.bold: true
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: splashImage.bottom
@@ -30,7 +31,7 @@ Page {
     Text {
         text: "MUSCLES"
         color: greenColor
-        font.pixelSize: Theme.dp(72)
+        font.pixelSize: Theme.fontSizeExtraLarge + Theme.dp(34)
         font.bold: true
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: devText.bottom
