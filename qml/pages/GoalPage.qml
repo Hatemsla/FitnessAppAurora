@@ -2,17 +2,16 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    objectName: "heightPage"
-    id: heightPage
+    objectName: "goalPage"
+    id: goalPage
     allowedOrientations: Orientation.Portrait
-
     backgroundColor: customBackgroundColor
 
-    property int _currentIndex: 3
+    property int _currentIndex: 2
 
     Text {
         id: tellText
-        text: "WHAT’S YOUR HEIGHT?"
+        text: "WHAT’S YOUR GOAL?"
         color: whiteColor
         font.pixelSize: Theme.fontSizeLarge + Theme.dp(4)
         font.bold: true
@@ -35,12 +34,13 @@ Page {
     }
 
     ListView {
-        id: numberListView
+        id: goalsListView
         width: parent.width
         anchors.top: toGiveText.bottom
         anchors.bottom: nextPage.top
-        anchors.topMargin: Theme.paddingLarge + Theme.dp(42)
-        anchors.bottomMargin: Theme.paddingLarge + Theme.dp(42)
+        anchors.topMargin: Theme.paddingLarge * 10
+        anchors.bottomMargin: Theme.paddingLarge * 10
+
         orientation: ListView.Vertical
         clip: true
         highlight: Rectangle { color: "transparent" }
@@ -52,54 +52,52 @@ Page {
         model: ListModel {
 
             Component.onCompleted: {
-                append({ "number": -1 })
-                append({ "number": -1 })
-                append({ "number": -1 })
-                for (var i = 120; i <= 220; ++i) {
-                    append({ "number": i });
-                }
-                append({ "number": -1 })
-                append({ "number": -1 })
-                append({ "number": -1 })
+                append({ "text": "" })
+                append({ "text": "" })
+                append({ "text": "Gain Weight" })
+                append({ "text": "Lose weight" })
+                append({ "text": "Get fitter" })
+                append({ "text": "Gain more flexible" })
+                append({ "text": "Learn the basic" })
+                append({ "text": "" })
+                append({ "text": "" })
             }
         }
 
         delegate: Rectangle {
             width: parent.width
-            height: numberListView.height / 7
+            height: goalsListView.height / 5
             color: "transparent"
 
             function handleOpacityValue(index) {
                 var offDistance = _currentIndex - index
                 var distance = Math.abs(_currentIndex - index)
-                if(numberListView.model.get(_currentIndex - offDistance).number === -1)
+                if(goalsListView.model.get(_currentIndex - offDistance).text === "")
                     return 0;
 
                 if (distance == 0)
                     return 1.0;
                 else if (distance == 1)
                     return 0.6;
-                else if (distance == 2)
-                    return 0.4;
                 else
-                    return 0.2;
+                    return 0.4;
             }
 
             function handleSizeValue(index) {
                 var distance = Math.abs(_currentIndex - index);
                 if (distance == 0)
-                    return Theme.fontSizeMedium + Theme.dp(38);
+                    return Theme.fontSizeMedium + Theme.dp(24);
                 else if (distance == 1)
-                    return Theme.fontSizeMedium + Theme.dp(34);
+                    return Theme.fontSizeSmall + Theme.dp(16);
                 else if (distance == 2)
-                    return Theme.fontSizeSmall + Theme.dp(26);
+                    return Theme.fontSizeSmall + Theme.dp(10);
                 else
-                    return Theme.fontSizeExtraSmall + Theme.dp(18);
+                    return Theme.fontSizeExtraSmall + Theme.dp(12);
             }
 
             Text {
                 id: modelText
-                text: model.number
+                text: model.text
                 font.pixelSize: handleSizeValue(index)
                 color: "white"
                 opacity: handleOpacityValue(index)
@@ -108,7 +106,7 @@ Page {
         }
 
         onContentYChanged: {
-            _currentIndex = numberListView.indexAt(contentX, contentY) + 3
+            _currentIndex = goalsListView.indexAt(contentX, contentY) + 2
         }
     }
 
@@ -116,32 +114,20 @@ Page {
     Column{
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
-        anchors.topMargin: Theme.paddingLarge + Theme.dp(584)
-        spacing: Theme.itemSizeSmall + Theme.dp(6)
+        anchors.topMargin: Theme.paddingLarge + Theme.dp(576)
+        spacing: Theme.itemSizeMedium
 
         Rectangle{
             height: Theme.itemSizeExtraSmall - Theme.dp(65)
-            width: Theme.itemSizeMedium * 2
+            width: Theme.itemSizeExtraLarge * 3
             color: greenColor
         }
 
         Rectangle{
             height: Theme.itemSizeExtraSmall - Theme.dp(65)
-            width: Theme.itemSizeMedium * 2
+            width: Theme.itemSizeExtraLarge * 3
             color: greenColor
         }
-    }
-
-    Text{
-        id: cmText
-        anchors.right: parent.right
-        anchors.rightMargin: Theme.paddingLarge + Theme.dp(198)
-        anchors.bottom: parent.bottom
-        anchors.top: parent.top
-        anchors.topMargin: Theme.paddingLarge + Theme.dp(630)
-        text: "cm"
-        font.pixelSize: Theme.fontSizeSmall
-        color: whiteColor
     }
 
     MyButton{
@@ -155,7 +141,7 @@ Page {
         buttonColor: grayColor
         iconSource: "qrc:/arrow-left.png"
 
-        onCustomClicked: pageStack.replace("WeightPage.qml")
+        onCustomClicked: pageStack.replace("HeightPage.qml")
     }
 
     MyButton{
@@ -172,7 +158,6 @@ Page {
         buttonText: "Next"
 
 
-        onCustomClicked: pageStack.replace("GoalPage.qml")
+        onCustomClicked: pageStack.replace("ActivityLevelPage.qml")
     }
 }
-

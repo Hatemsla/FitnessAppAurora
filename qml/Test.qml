@@ -41,7 +41,7 @@ import Sailfish.Silica 1.0
 ApplicationWindow {
     id: windowApp
     objectName: "applicationWindow"
-    initialPage: Qt.resolvedUrl("pages/WeightPage.qml")
+    initialPage: Qt.resolvedUrl("pages/ActivityLevelPage.qml")
     cover: Qt.resolvedUrl("cover/DefaultCoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
 

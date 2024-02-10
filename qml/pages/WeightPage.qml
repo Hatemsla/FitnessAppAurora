@@ -125,6 +125,10 @@ Page {
 
         }
 
+        onContentXChanged: {
+            console.log("ContentX: ", contentX, "ContentY: ", contentY)
+        }
+
         onCurrentIndexChanged: {
             _currentIndex = currentIndex + 10
             var num = weightList.model.get(_currentIndex).number

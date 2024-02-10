@@ -51,12 +51,14 @@ HEADERS +=
 
 DISTFILES += \
     qml/pages/Activity.qml \
+    qml/pages/ActivityLevelPage.qml \
     qml/pages/AddDevicePage.qml \
     qml/pages/AgePage.qml \
     qml/pages/Authorization.qml \
     qml/pages/CircularProgressBar.qml \
     qml/pages/Device.qml \
     qml/pages/GenderPage.qml \
+    qml/pages/GoalPage.qml \
     qml/pages/HeightPage.qml \
     qml/pages/MyButton.qml \
     qml/pages/NewDevice.qml \
